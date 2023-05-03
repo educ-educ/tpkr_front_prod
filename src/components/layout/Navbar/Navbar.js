@@ -2,7 +2,7 @@ import './Navbar.css'
 
 export default function Navbar() {
     return (
-            <nav className="navbar navbar-expand-sm navbar-light bg-green">
+            <nav className="navbar navbar-expand navbar-light bg-green">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#0">
                         Navbar

@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import './App.css';
-import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer/Footer'
+import Navbar from './components/layout/Navbar/Navbar'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           Learn React
         </a>
       </header> */}
+        <Footer/>
     </div>
   );
 }
