@@ -32,26 +32,26 @@ function Login() {
     }
 
     return (
-        <div className="col-md-6 offset-md-3 mt-5">
-            <div className="alert alert-info">
-                Username: test<br />
-                Password: test
-            </div>
-            <div className="card">
-                <h4 className="card-header">Login</h4>
-                <div className="card-body">
+        <div className="col-md-6 offset-md-3 mt-5 admin-access">
+            <div className="admin-access__main">
+                <div className="alert alert-info">
+                    Username: test<br />
+                    Password: test
+                </div>
+                <h4 className="admin-access__title">Login</h4>
+                <div className="admin-access__form">
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="form-group">
-                            <label>Username</label>
-                            <input name="username" type="text" {...register('username')} className={`form-control ${errors.username ? 'is-invalid' : ''}`} />
+                        <div className="admin-access__form__field">
+                        <div className='admin-access__form__field-name'>Username</div>
+                            <input name="username" type="text" {...register('username')} className={`admin-access__form__field-input ${errors.username ? 'is-invalid' : ''} `} />
                             <div className="invalid-feedback">{errors.username?.message}</div>
                         </div>
-                        <div className="form-group">
-                            <label>Password</label>
-                            <input name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
+                        <div className="admin-access__form__field">
+                            <div className='admin-access__form__field-name'>Password</div>
+                            <input name="password" type="password" {...register('password')} className={`admin-access__form__field-input ${errors.password ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.password?.message}</div>
                         </div>
-                        <button disabled={isSubmitting} className="btn btn-primary">
+                        <button disabled={isSubmitting} className="admin-access__form__button">
                             {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
                             Login
                         </button>
