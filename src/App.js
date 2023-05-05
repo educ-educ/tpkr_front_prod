@@ -4,11 +4,13 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import './App.css';
 import Footer from './components/layout/Footer/Footer'
 import Navbar from './components/layout/Navbar/Navbar'
+import Title1 from './components/title1/Title1';
 
 function App() {
   return (
     <div className="App">
         <Navbar/>
+        <Title1/>
          {/* <header className="App-header">
          <img src={logo} className="App-logo" alt="logo" />
          <p>
