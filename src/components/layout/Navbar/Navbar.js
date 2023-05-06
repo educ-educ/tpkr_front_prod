@@ -14,7 +14,7 @@ export default function Navbar() {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <div className="navbar-nav d-flex flex-row-reverse">
                                 <div className='nav-item px-2'>
-                                    <a className="btn btn-green" aria-current="page" href="#0">Регистрация</a>
+                                    <a className="btn btn-green" aria-current="page" href="./">Регистрация</a>
                                 </div>
                                 <div className='nav-item px-2'>
                                     <a className="btn btn-green" aria-current="page" href="#0">Войти</a>

@@ -1,8 +1,8 @@
 #title1_wrapper {
-    background-image: url('./green-dirty-blackboard 1.png');
+    background-image: url('/src/img/green-dirty-blackboard 1.png');
 }
 #title1_box_wrapper {
-    height: 83vh;
+    height: 93vh;
     flex-direction: column;
 }
 
