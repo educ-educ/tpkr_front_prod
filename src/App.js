@@ -10,6 +10,9 @@ import MainLayout from './Layouts/MainLayout';
 import MainPage from './pages/MainPage';
 import PrivateLayout from './Layouts/PrivateLayout';
 import PersonPage from './pages/PersonPage';
+import Footer from './components/layout/Footer/Footer'
+import Navbar from './components/layout/Navbar/Navbar'
+import Title1 from './components/title1/Title1';
 
 function App() {
   history.navigate = useNavigate();
@@ -25,6 +28,13 @@ function App() {
   }
 
   return (
+    
+    {/*<div className="App">
+        <Navbar/>
+        <Title1/>
+        <Footer/>
+    </div> */}
+    
     <Routes>
         {/* <Route exact path="/" element={<MainLayout/>}>
           <Route index element={<MainPage/>}/>
