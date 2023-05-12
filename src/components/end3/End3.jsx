@@ -3,7 +3,7 @@ import './End3.scss'
 export default function End3() {
 
     return (
-        <div className='container-fluid'>
+        <div className='container-fluid def-background'>
             <div className='row sub-header justify-content-start'>
                 <div className='sub-header__box'>
                     <h1 className='sub-header__title'>Пафосное название курса длинное</h1>
