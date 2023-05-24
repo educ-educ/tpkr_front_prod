@@ -1,5 +1,6 @@
 export function fakeBackend() {
     let users = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User', patronymicName: "users", role: "test"}];
+    let menuPoints = [{id: 1, link: "/auth", title: "Войти"}, {id: 2, link: "/subscribe", title: "Регистрация"}]
     let realFetch = window.fetch;
     
     window.fetch = function (url, opts) {
@@ -13,6 +14,8 @@ export function fakeBackend() {
                         return authenticate();
                     case url.endsWith('api/users') && opts.method === 'GET':
                         return getUsers();
+                    case url.endsWith('api/getMenuPoints') && opts.method === 'POST':
+                            return getMenuPoints();
                     default:
                         return realFetch(url, opts)
                             .then(response => resolve(response))
@@ -39,6 +42,10 @@ export function fakeBackend() {
             function getUsers() {
                 if (!isAuthenticated()) return unauthorized();
                 return ok(users);
+            }
+
+            function  getMenuPoints() {
+                return ok(menuPoints)
             }
 
             function ok(body) {

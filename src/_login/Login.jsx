@@ -32,28 +32,28 @@ function Login() {
     }
 
     return (
-        <div className="col-md-6 offset-md-3 mt-5 admin-access">
+        <div className="admin-access">
             <div className="admin-access__main">
-                <div className="alert alert-info">
-                    Username: test<br />
-                    Password: test
+                <div className="admin-access--info">
+                    Имя пользователя: test<br />
+                    Пароль: test
                 </div>
-                <h4 className="admin-access__title">Login</h4>
+                <h4 className="admin-access__title">Вход</h4>
                 <div className="admin-access__form">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="admin-access__form__field">
-                        <div className='admin-access__form__field-name'>Username</div>
+                        <div className='admin-access__form__field-name'>Имя пользователя</div>
                             <input name="username" type="text" {...register('username')} className={`admin-access__form__field-input ${errors.username ? 'is-invalid' : ''} `} />
                             <div className="invalid-feedback">{errors.username?.message}</div>
                         </div>
                         <div className="admin-access__form__field">
-                            <div className='admin-access__form__field-name'>Password</div>
+                            <div className='admin-access__form__field-name'>Пароль</div>
                             <input name="password" type="password" {...register('password')} className={`admin-access__form__field-input ${errors.password ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.password?.message}</div>
                         </div>
                         <button disabled={isSubmitting} className="admin-access__form__button">
                             {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
-                            Login
+                            Войти
                         </button>
                         {authError &&
                             <div className="alert alert-danger mt-3 mb-0">{authError.message}</div>

@@ -1,0 +1,31 @@
+
+.main {
+    &__wrapper {
+        backdrop-filter: blur(10px);
+        background-image: url('../img/back.jpg');
+        background-size: cover;
+        flex-direction: column;
+        justify-content: center;
+        display: flex;
+    }
+    
+    &__box {
+        margin-left: 10%;
+        width: 25%;
+        height: 30%;
+        border-radius: 20px;
+        background-color: var(--color-green-4);
+        font-size: 36px;
+        padding: 0 20px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        color: var(--color-background--light);
+    }
+
+    &__line {
+        width: 100%;
+        border: 8px solid var(--color-background--navbar)
+    }
+    
+}
