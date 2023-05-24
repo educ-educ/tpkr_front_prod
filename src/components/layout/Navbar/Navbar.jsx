@@ -38,9 +38,9 @@ export default function Navbar() {
                             <div className="navbar-nav d-flex flex-row-reverse">
                                 {userBase}
                                 <div className='nav-item px-2 dropdown'>
-                                    <a className="btn btn-green dropdown-toggle" href="#0" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button className="btn btn-green dropdown-toggle" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Язык
-                                    </a>
+                                    </button>
                                     <ul className="dropdown-menu" aria-labelledby="languageDropdown">
                                         <li><a className="dropdown-item" href="#0">Русский</a></li>
                                         <li><a className="dropdown-item" href="#0">English</a></li>

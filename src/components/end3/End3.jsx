@@ -12,12 +12,12 @@ export default function End3() {
             </div>
             <div className='row justify-content-between'>
                 <div className='col-2 sidebar'>
-                    <div className='sidebar__element'>Обучающиеся</div>
-                    <div className='sidebar__element'>Статистика</div>
-                    <div className='sidebar__element'>Блоки заданий</div>
-                    <div className='sidebar__element'>Описания</div>
-                    <div className='sidebar__element'>Отзывы</div>
-                    <div className='sidebar__element'>Рейтинг курса</div>
+                    <div className='btn sidebar__element'>Обучающиеся</div>
+                    <div className='btn sidebar__element'>Статистика</div>
+                    <div className='btn sidebar__element'>Блоки заданий</div>
+                    <div className='btn sidebar__element'>Описания</div>
+                    <div className='btn sidebar__element'>Отзывы</div>
+                    <div className='btn sidebar__element'>Рейтинг курса</div>
                 </div>
                 <div className='col-10'></div>
             </div>

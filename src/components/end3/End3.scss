@@ -31,10 +31,11 @@
         border: solid 2px var(--color-background--attention) ;
         // display: block;
         border-radius: 6px;
-        text-align: start;
-        text-decoration: none !important;
+        text-align: center;
+        // text-decoration: none !important;
 
-        line-height: 40px;
+        width: 90% !important;
+        line-height: 30px !important;
         margin: 10px;
         height: 40px;
         padding-left: 10px;
