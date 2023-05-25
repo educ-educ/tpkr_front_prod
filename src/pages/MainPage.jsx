@@ -1,3 +1,5 @@
+// import Title1 from '../components/title1/Title1'
+import End3 from '../components/end3/End3'
 
 import {Container} from "react-bootstrap";
 import "./pages.scss"
@@ -22,6 +24,7 @@ const MainPage = () => {
                     <div className='main__box'>
                         Ученье свет, а неученье — тьма.
                     </div>
+                    {/* <End3/> */}
             </Container>
             <div className="main__line"/>
         </div>
