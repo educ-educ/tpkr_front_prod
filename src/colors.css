@@ -1,7 +1,7 @@
 :root { 
    --color-background--light: #FFFFFF;
    --color-background--light-green: #D6EBE0;
-    --color-background--navbar: #456554;
+    --color-background--navbar: #3c5648;
     --color-text: #2C3832;
     --color-text--dark: #1e2723;
     --color-text--attention: #7C5564;
@@ -9,8 +9,9 @@
     --color-green-1: #6D937F;
     --color-green-2: #93B2A1;
     --color-pink-light: #BE9DA9;
-    --color-yellow: #F5E768;
+    --color-yellow-light: #fdfdda;
     --color-yellow-1: #C7B198;
     --color-green-3: #F5FBF1;
     --color-background-neutral: #B7B5B5;
+    --color-green-4: #95c7ac;
 }

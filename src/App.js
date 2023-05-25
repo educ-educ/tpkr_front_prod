@@ -25,8 +25,6 @@ function App() {
   }
 
   return (
-
-
     <Routes>
         <Route exact path="/" element={<MainLayout/>}>
           <Route index element={<MainPage/>}/>

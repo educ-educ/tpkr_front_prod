@@ -1,9 +1,16 @@
 
 .admin-access {
     display: flex;
-    padding-top: 10vh;
+    background-color: var(--color-background--navbar);
     justify-content: center;
+    align-items: center;
     height: 100vh;
+
+    &--info {
+        background-color: var(--color-yellow-light);
+        border-radius: 7px;
+        padding: 10px 15px;
+    }
 
    &__main {
     display: flex;
@@ -15,6 +22,7 @@
    }
 
     &__title {
+        margin-top: 20px;
         text-align: center;
         font-size: 28px;
         color: var( --color-text);

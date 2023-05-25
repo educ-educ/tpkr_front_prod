@@ -1,0 +1,81 @@
+
+.top-navbar {
+    transition: all 0.5s ease-in-out;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    padding-bottom: 15px;
+    background-color: var(--color-background--navbar);
+
+    &__links {
+        display: flex;
+        align-items: center;
+
+        .navigation-btn {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            padding: 7px;
+            color: var(--color-text);
+            font-size: 24px;
+            background-color: var( --color-background--light-green);
+            border: 1px solid var(--color-text);
+            border-radius: 7px;
+        }
+        .btn__menu{
+            background-color: var(--color-background--navbar);
+            border-radius: 7px;
+            border: none;
+            color: var(--color-background--light-green);
+            font-size: 36px;
+        }
+    
+        a {
+            background-color: var(--color-background--light-green);
+            border: 1px solid var(--color-text);
+            border-radius: 7px;
+            margin-right: 20px;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 22px;
+        }
+
+        a:hover {
+            background-color: var( --color-yellow-light);
+        }
+
+        .dropdown-content {
+            border: 1px solid var(--color-text--dark);
+            background-color: var(--color-green-4);
+            top: 9vh;
+            right: 5vw;
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        
+            a {
+                padding: 15px 15px !important;
+                margin: 0 !important;
+                height: inherit;
+                width: 100%;
+                text-align: center;
+                color: var(--color-text--dark);
+                text-decoration: none;
+                font-size: 16px;
+            }
+            a:hover {
+                background-color: var(--color-background--light);
+                border-bottom: none !important;
+            }
+        }
+    }
+}
