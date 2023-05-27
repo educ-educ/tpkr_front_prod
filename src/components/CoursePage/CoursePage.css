@@ -1,0 +1,111 @@
+.course-page {
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+}
+
+.header {
+    position: relative;
+}
+
+.image-container {
+    height: 310px;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+
+
+}
+
+.title {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    border: 3px;
+    text-transform: uppercase;
+}
+
+.description {
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0 120px;
+}
+
+.two-buttons {
+    display: flex;
+    padding-left: 3%;
+}
+
+.author-button,
+.reviews-button {
+    height: 80px;
+    min-width: 150px;
+    margin-left: 5%;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: #6D937F;
+    ;
+}
+
+.register-button {
+    height: 79px;
+    min-width: 150px;
+    background-color: #511C2F;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.course-info {
+    background-color: #e8f5e9;
+    padding: 20px 120px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.info-container {
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+.info-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.line {
+    height: 2px;
+    width: 100%;
+    background-color: #ccc;
+    margin: 10px 0;
+}
+
+.info-text {
+    font-size: 16px;
+    color: #333;
+}
