@@ -1,3 +1,5 @@
+// import Title1 from '../components/title1/Title1'
+import End3 from '../components/end3/End3'
 
 import {Container} from "react-bootstrap";
 import CarouselCountContent from "../components/Carousel/CarouselCountContent/index"
@@ -39,6 +41,7 @@ const MainPage = () => {
                         Ученье свет, 
                         а неученье — тьма.
                     </div>
+                    {/* <End3/> */}
             </Container>
             <div className="main__line"/>
               <Container fluid className='main__carousel-content' id={'info'}>
