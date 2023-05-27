@@ -4,19 +4,11 @@ import Footer from '../components/navigation/Footer/Footer'
 import Navbar from '../components/navigation/Navbar/Navbar'
 
 const MainLayout = () => {
-   
-    const [navigationHeight, setNavigationHeight] = useState(0);
-
-    const passNavigationHeight = (value) => {
-        setNavigationHeight(value);
-        console.log(value)
-    }
-
     return (
         <div>
-            <Navbar passNavigationHeight={passNavigationHeight}/>
+            <Navbar/>
             <div>
-                <Outlet context={navigationHeight}/>
+                <Outlet/>
             </div>
             <Footer/>
         </div>

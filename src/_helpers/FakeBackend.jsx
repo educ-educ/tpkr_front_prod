@@ -1,6 +1,24 @@
+
+import article1 from '../img/article1.jpg';
+import article3 from '../img/article3.jpg';
+import article4 from '../img/article4.jpeg';
+import article5 from '../img/article5.jpg';
+import article6 from '../img/article6.jpg';
+import article7 from '../img/article7.jpg';
+import article8 from '../img/article8.jpg';
+
 export function fakeBackend() {
     let users = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User', patronymicName: "users", role: "test"}];
     let menuPoints = [{id: 1, link: "/auth", title: "Войти"}, {id: 2, link: "/subscribe", title: "Регистрация"}]
+    let courses = [
+        {id: 0, src: article1, text: "Чайная церемония", data: '11/07/2022'},
+        {id: 2, src: article3, text: "Все о чае", data: '11/03/2022'},
+        {id: 3, src: article4, text: "Чай Древнего Китая у вас на даче", data: '03/05/2022'},
+        {id: 4, src: article5, text: "Все о чае", data: '11/05/2022'},
+        {id: 5, src: article6, text: "Из какой чашки пить чай вкуснее всего: выбираем лучшую посуду по форме, объёму и материалу", data: '05/04/2022'},
+        {id: 6, src: article7, text: "Научись заваривать чай", data: '21/02/2022'},
+        {id: 7, src: article8, text: "Японское искусство заварки", data: '13/07/2022'},
+      ]
     let realFetch = window.fetch;
     
     window.fetch = function (url, opts) {
@@ -15,7 +33,9 @@ export function fakeBackend() {
                     case url.endsWith('api/users') && opts.method === 'GET':
                         return getUsers();
                     case url.endsWith('api/getMenuPoints') && opts.method === 'POST':
-                            return getMenuPoints();
+                        return getMenuPoints();
+                    case url.endsWith('api/getCourses') && opts.method === 'POST':
+                        return getCourses();
                     default:
                         return realFetch(url, opts)
                             .then(response => resolve(response))
@@ -46,6 +66,10 @@ export function fakeBackend() {
 
             function  getMenuPoints() {
                 return ok(menuPoints)
+            }
+
+            function  getCourses() {
+                return ok(courses)
             }
 
             function ok(body) {
