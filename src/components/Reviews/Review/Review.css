@@ -1,0 +1,59 @@
+
+
+.review {
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 380px;
+    min-height: 480px;
+    
+    display: flex;
+    flex-direction: column;
+
+    background-color: #7C5564;
+
+    transition: all 0.5s ease-in-out;
+    
+}
+
+.review__box {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    max-height: 370px;
+    margin: auto;
+    margin-top: 5%;
+
+    padding: 5%;
+    background-color: #CFEADB;
+}
+
+.review__box > img {
+    padding: 5%;
+    object-fit: contain;
+}
+
+
+.review:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.review__container {
+    padding: 2px 16px;
+    
+    
+}
+
+h1 {
+    font-size: 24px;
+    color: #2C3832;
+    ;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+    color: #2C3832;
+    ;
+}

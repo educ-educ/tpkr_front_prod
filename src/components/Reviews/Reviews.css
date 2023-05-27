@@ -1,0 +1,15 @@
+.reviews__container {
+
+    width: 100%;
+    padding: 7%;
+    margin: auto;
+    background-color: #86A594;
+  
+    display: grid;
+    /* grid-template-columns: repeat(3, 400px); */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px 30px;
+    
+    transition: transform 0.5s ease-in-out;
+  
+  }
