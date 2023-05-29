@@ -8,8 +8,7 @@ import article7 from '../img/article7.jpg';
 import article8 from '../img/article8.jpg';
 
 export function fakeBackend() {
-    let users = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User', patronymicName: "users", role: "test"}];
-    let menuPoints = [{id: 1, link: "/auth", title: "Войти"}, {id: 2, link: "/subscribe", title: "Регистрация"}]
+    let users = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User', patronymicName: "users", role: "student"}];
     let courses = [
         {id: 0, src: article1, text: "Чайная церемония", data: '11/07/2022'},
         {id: 2, src: article3, text: "Все о чае", data: '11/03/2022'},
@@ -25,17 +24,17 @@ export function fakeBackend() {
         return new Promise((resolve, reject) => {
             // wrap in timeout to simulate server api call
             setTimeout(handleRoute, 1000);
-
             function handleRoute() {
                 switch (true) {
                     case url.endsWith('api/parseUserLogin') && opts.method === 'POST':
                         return authenticate();
                     case url.endsWith('api/users') && opts.method === 'GET':
                         return getUsers();
-                    case url.endsWith('api/getMenuPoints') && opts.method === 'POST':
-                        return getMenuPoints();
                     case url.endsWith('api/getCourses') && opts.method === 'POST':
                         return getCourses();
+                    case url.endsWith('api/getCourseById') && opts.method === 'POST':
+                        const value = JSON.parse(opts.body).body
+                        return getCourseById(value);
                     default:
                         return realFetch(url, opts)
                             .then(response => resolve(response))
@@ -46,7 +45,6 @@ export function fakeBackend() {
             function authenticate() {
                 const { username, password } = body();
                 const user = users.find(x => x.username === username && x.password === password);
-                console.log({user})
                 if (!user) return error('Username or password is incorrect');
 
                 return ok({
@@ -59,13 +57,15 @@ export function fakeBackend() {
                 });
             }
 
+            function getCourseById(id) {
+                const result = courses.filter(elem => elem.id === Number(id))
+                if(result === []) return error("not found")
+                return ok(result)
+            }
+
             function getUsers() {
                 if (!isAuthenticated()) return unauthorized();
                 return ok(users);
-            }
-
-            function  getMenuPoints() {
-                return ok(menuPoints)
             }
 
             function  getCourses() {

@@ -61,7 +61,7 @@ function createExtraReducers() {
                 localStorage.setItem('user', JSON.stringify(user));
                 state.user = user;
                 // get return url from location state or default to home page
-                const { from } = history.location.state || {from: { pathname: '/admin/home' }};
+                const { from } = history.location.state || {from: { pathname: `/${user.role}` }};
                 history.navigate(from);
             },
             [rejected]: (state, action) => {

@@ -4,49 +4,49 @@ import {Link, useLocation} from 'react-router-dom';
 import {AiFillHome, AiFillSetting, AiFillBook} from 'react-icons/ai';
 import {BsBookmarkStarFill, BsBookHalf, BsBookmarksFill} from 'react-icons/bs';
 import {useSelector} from 'react-redux';
-import './UserSidebar.scss';
+import './CourseSidebar.scss';
 
 
 const sidebarNavItems = [
     {
-        textContent: 'Главная',
+        textContent: 'Описание',
         icon: <AiFillHome/>,
         to: '/admin/home',
         section: ''
     },
     {
-        textContent: 'Текущие курсы',
+        textContent: 'Обучающиеся',
         icon: <BsBookHalf/>,
         to: '/admin/home/current_courses',
         section: 'menu'
     },
     {
-        textContent: 'Законченные курсы',
+        textContent: 'Статистика',
         icon: <AiFillBook/>,
         to: '/admin/home/ended_courses',
         section: 'mainpage'
     },
     {
-        textContent: 'Сертификаты',
+        textContent: 'Блоки заданий',
         icon: <BsBookmarksFill/>,
         to: '/admin/home/papers',
         section: 'contact'
     },
     {
-        textContent: 'Оценки',
+        textContent: 'Отзывы',
         icon: <BsBookmarkStarFill/>,
         to: '/admin/home/grades',
         section: 'users'
     },
     {
-        textContent: 'Управление подпиской',
+        textContent: 'Рейтинг курса',
         icon: <AiFillSetting/>,
         to: '/admin/home/subscribtion',
         section: 'form'
     },
 ]
 
-const UserSidebar = () => {
+const CourseSidebar = () => {
     const authUser = useSelector(x => x.auth.user);
     const [activeIndex, setActiveIndex] = useState(0);
     const sidebarRef = useRef();
@@ -59,19 +59,6 @@ const UserSidebar = () => {
     }, [location]);
 
     return <div className='sidebar'>
-        <div className='sidebar__wrapper'>
-            <Link to={'/'} className='sidebar__site-name'>
-                Платформа
-            </Link>
-            <div className="sidebar__person">
-                <div className='sidebar__person__name'>
-                    {authUser.lastName + " " + authUser.firstName + " " + authUser.patronymicName}
-                </div>
-                <div className='sidebar__person__role'>
-                    {authUser.role}
-                </div>
-            </div>
-        </div>
         <div ref={sidebarRef} className="sidebar__menu">
             {
                 sidebarNavItems.map((item, index) => (
@@ -87,4 +74,4 @@ const UserSidebar = () => {
     </div>;
 };
 
-export default UserSidebar;
+export default CourseSidebar;

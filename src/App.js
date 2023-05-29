@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {Route, Routes, Navigate, useNavigate, useLocation, Outlet} from 'react-router-dom';
-import {useState, useLayoutEffect} from "react";
+import {useState} from "react";
 import {history} from './_helpers';
 import {useSelector} from 'react-redux';
 import {Login} from './_login';
@@ -9,7 +9,9 @@ import './App.css';
 import MainLayout from './Layouts/MainLayout';
 import MainPage from './pages/MainPage';
 import PrivateLayout from './Layouts/PrivateLayout';
-import PersonPage from './pages/PersonPage';
+import StudentPage from './pages/StudentPage';
+import CourseLayout from "../src/Layouts/CourseLayout"
+import CoursePage from "../src/pages/CoursePage"
 
 function App() {
   history.navigate = useNavigate();
@@ -21,19 +23,28 @@ function App() {
 
   function PrivateOutlet() {
     const authUser = useSelector(x => x.auth.user);
-    return authUser ? <Outlet/> : <Navigate to="/"/>;
+    return authUser ? <Navigate to={`/admin/${authUser.role}`}/> : <Navigate to="/"/>;
+  }
+
+  function useCheckLogin() {
+    const authUser = useSelector(x => x.auth.user);
+    console.log(authUser)
+    return authUser ? <Navigate to={`/${authUser.role}`}/> : <Navigate to="/"/>;
   }
 
   return (
     <Routes>
         <Route exact path="/" element={<MainLayout/>}>
           <Route index element={<MainPage/>}/>
+          <Route exact path="courses/" element={<CourseLayout/>}/>
+          <Route exact path="courses/:courseId" element={<CoursePage/>}/>
         </Route> 
-        <Route exact path="/auth" element={<Login/>}/>
-        <Route exact path="/admin" element = {<PrivateOutlet/>}>
-          <Route path="home" element={<PrivateLayout/>}>
-            <Route index element={<PersonPage/>}/>
-          </Route>
+        <Route exact path="/auth" element={<Login/>} onEnter={useCheckLogin}/>
+        <Route exact path="/student" element={<PrivateLayout/>}>
+          <Route index element={<StudentPage/>}/>
+        </Route>
+        <Route exact path="/teacher" element={<PrivateLayout/>}>
+          <Route index element={<StudentPage/>}/>
         </Route>
         <Route path="*" element={<Navigate to="/"/>}/>
     </Routes>

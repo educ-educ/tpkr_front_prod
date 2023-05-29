@@ -3,8 +3,8 @@
     display: flex;
     justify-content: center;
     padding: 30px 0;
-
-
+    min-height: 20vh; 
+    
     &-info-title {
         color: var(--color-background--light-green);
         font-size: 22px;

@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom';
 import {AiOutlineMenu} from 'react-icons/ai';
 import {HashLink } from 'react-router-hash-link';
 import {fetchWrapper } from '../../../_helpers';
+import Img from "../../Img/index"
+import logo from "../../../img/library.png"
 import './Navbar.scss'
 
 export default function Navbar() {
@@ -11,21 +13,8 @@ export default function Navbar() {
     const topElement = useRef(null);
     const [displayArray, setDisplayArray] = useState({dropdawnDisplay: 'none', menuDisplay: 'block'})
     const [opaque, setOpaque] = useState({opacity: 1});
-    const [menuContent, setMenuContent] = useState([])
+    const menuContent = [{id: 1, link: "/auth", title: "Войти"}, {id: 2, link: "/subscribe", title: "Регистрация"}]
     const [isShown, setIsShown] = useState(true);
-    const [appState, setAppState] = useState({
-        loading: false,
-        repos: null,
-      });
-
-    useLayoutEffect(() => {
-        fetchWrapper.post(`${process.env.REACT_APP_API_URL}/getMenuPoints`).then((response) => {
-            console.log(response)
-            const changedData = response
-            setMenuContent(changedData)
-        });
-        setAppState({ loading: false, repos: "ok"});
-    }, [setAppState])
 
     useLayoutEffect(() => {
         if (typeof window !== "undefined") {
@@ -45,8 +34,8 @@ export default function Navbar() {
 
     return (
         <Container fluid className = "top-navbar" ref={topElement} style={opaque}>
-                <Link to="/" className="site-name">
-                {/* <Img src={logo} classes={['logo']}/> */}
+                <Link to="/" className="top-navbar__site-name">
+                <Img src={logo} classes={['logo']}/>
             </Link>
             <div>
                 <div className="top-navbar__links" style={{display: displayArray.menuDisplay}}>

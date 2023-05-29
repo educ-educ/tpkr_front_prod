@@ -1,5 +1,3 @@
-// import Title1 from '../components/title1/Title1'
-import End3 from '../components/end3/End3'
 
 import {Container} from "react-bootstrap";
 import CarouselCountContent from "../components/Carousel/CarouselCountContent/index"
@@ -22,8 +20,11 @@ const MainPage = () => {
 
     useLayoutEffect(() => {
         fetchWrapper.post(`${process.env.REACT_APP_API_URL}/getCourses`).then((response) => {
-            console.log(response)
-            const changedData = response
+            const changedData = response.map(elem => ({id: elem.id,
+                src: elem.src,
+                text: elem.text, 
+                data: elem.data, 
+                url: `courses/${elem.id}`}))
             setCourses(changedData)
         });
         setAppState({ loading: false, repos: "ok"});

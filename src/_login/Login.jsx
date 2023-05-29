@@ -14,7 +14,7 @@ function Login() {
     const authError = useSelector(x => x.auth.error);
 
     useEffect(() => {
-        if (authUser) history.navigate('/admin/home');
+        if (authUser) history.navigate(`/${authUser.role}`);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
