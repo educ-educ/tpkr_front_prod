@@ -10,6 +10,8 @@ import MainLayout from './Layouts/MainLayout';
 import MainPage from './pages/MainPage';
 import PrivateLayout from './Layouts/PrivateLayout';
 import PersonPage from './pages/PersonPage';
+import GradesPage from './pages/GradesPage/GradesPage';
+import PapersPage from './pages/PapersPage/PapersPage';
 
 function App() {
   history.navigate = useNavigate();
@@ -33,6 +35,8 @@ function App() {
         <Route exact path="/admin" element = {<PrivateOutlet/>}>
           <Route path="home" element={<PrivateLayout/>}>
             <Route index element={<PersonPage/>}/>
+            <Route path='papers' element={<PapersPage/>}/>
+            <Route path='grades' element={<GradesPage/>}/>
           </Route>
         </Route>
         <Route path="*" element={<Navigate to="/"/>}/>
