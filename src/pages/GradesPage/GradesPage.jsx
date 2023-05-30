@@ -71,7 +71,7 @@ const GradesPage = () => {
                 Оценки
             </div>
             <div className='person-decorator__mainpage'>
-                <Table stripped className="person-decorator__mainpage__table">
+                <Table striped className="person-decorator__mainpage__table">
                     <thead>
                         <th colSpan="3" id="itemname">Название</th>
                         <th id='status'>Статус</th>
