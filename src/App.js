@@ -9,7 +9,10 @@ import './App.css';
 import MainLayout from './Layouts/MainLayout';
 import MainPage from './pages/MainPage';
 import PrivateLayout from './Layouts/PrivateLayout';
-import StudentPage from './pages/PrivateStudent/StudentPage';
+// import PersonPage from './pages/PersonPage';
+import GradesPage from './pages/GradesPage';
+import PapersPage from './pages/PapersPage';
+import StudentPage from './pages/StudentPage';
 import CourseLayout from "../src/Layouts/CourseLayout"
 import CoursePage from "../src/pages/CoursePage"
 import PrivateTeacherLayout from "../src/Layouts/PrivateTeacherLayout"

@@ -1,4 +1,3 @@
-
 import {Container} from "react-bootstrap";
 import CarouselCountContent from "../components/Carousel/CarouselCountContent/index"
 import {fetchWrapper } from '../_helpers';
@@ -42,7 +41,6 @@ const MainPage = () => {
                         Ученье свет, 
                         а неученье — тьма.
                     </div>
-                    {/* <End3/> */}
             </Container>
             <div className="main__line"/>
               <Container fluid className='main__carousel-content' id={'info'}>
