@@ -108,7 +108,19 @@
         border-top: 0;
     }
     
-    
+    &__stripped {
+        @extend .person-table__layer1;
+        &:nth-child(even) {
+            @extend .person-table__layer2;
+        }
+    }
+    &__link  {
+        color: var(--color-background--light-green);
+        &:hover {
+            color: var(--color-text) !important;
+        }
+    }
+
     &__layer1 {
         background-color: var(--color-green-1) !important;
     }

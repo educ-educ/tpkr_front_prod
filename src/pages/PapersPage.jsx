@@ -35,7 +35,7 @@ const PapersPage = () => {
                 Сертификаты
             </div>
             <div className='student-decorator__mainpage'>
-                <Table striped>
+                <Table>
                     <thead>
                         <th>Курс</th>
                         <th>Оценка</th>
@@ -46,11 +46,11 @@ const PapersPage = () => {
                         {
                             papers.map((paper)=>
                                 <>
-                                    <tr>
+                                    <tr className="person-table__stripped">
                                         <td>{paper.course}</td>
                                         <td>{paper.grade}</td>
                                         <td>{paper.completion_date}</td>
-                                        <td><a target="_blank" rel="noreferrer" href={paper.doc_link}>Скачать сертификат</a></td>
+                                        <td><a target="_blank" rel="noreferrer" className="person-table__link" href={paper.doc_link}>Скачать сертификат</a></td>
                                     </tr>
                                 </>
                             )
