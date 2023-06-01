@@ -1,4 +1,4 @@
-import "../pages.scss"
+import "./pages.scss"
 import Table from "react-bootstrap/Table"
 import { Container } from "react-bootstrap"
 import {AiFillFolderOpen} from 'react-icons/ai'
@@ -89,11 +89,11 @@ const GradesPage = () => {
     // console.log(getCourceRowCount(grades[0]));
     // console.log(isActive)
     return (
-        <Container fluid className='person-decorator' style={{height: window.innerHeight - 60 + 'px'}}>
-            <div className='person-decorator__title'>
+        <Container fluid className='student-decorator' style={{height: window.innerHeight - 60 + 'px'}}>
+            <div className='student-decorator__title'>
                 Оценки
             </div>
-            <div className='person-decorator__mainpage'>
+            <div className='student-decorator__mainpage'>
                 <Table>
                     <thead>
                         <th colSpan="3" id="itemname">Название</th>

@@ -1,6 +1,6 @@
 
 import './ArticleCard.scss'
-import {Img} from '../Img/index';
+import Img from '../Img/index';
 import {Card} from '../Card/index';
 
 export const ArticleCard = ({classes = [' '], src, articleText, articleDescription='', data, linkAlter, width}) => {

@@ -1,0 +1,31 @@
+.course {
+    &__def-background {
+        padding-top: 60px;
+        background-color: var(--color-green-3);
+        width: 100%;
+    }
+    
+    &__sub-header {
+        display: flex;
+        justify-content: flex-start;
+        background: url('../../../../img/end3_subheader_bg.png'), no-repeat;
+        background-position: center center;
+        background-size: cover;
+        height: 25vh;
+    
+        &__box {
+            margin-left: 5vw;
+            color: white;
+        }
+    
+        &__title {
+            font-size: xx-large;
+            margin-top: 5vh;
+            width: 20vw;
+        }
+        &__description {
+            margin-top: 2vh;
+            width: 40vw;
+        }
+    }
+}

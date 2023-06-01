@@ -19,8 +19,11 @@ const MainPage = () => {
 
     useLayoutEffect(() => {
         fetchWrapper.post(`${process.env.REACT_APP_API_URL}/getCourses`).then((response) => {
-            console.log(response)
-            const changedData = response
+            const changedData = response.map(elem => ({id: elem.id,
+                src: elem.src,
+                text: elem.text, 
+                data: elem.data, 
+                url: `courses/${elem.id}`}))
             setCourses(changedData)
         });
         setAppState({ loading: false, repos: "ok"});

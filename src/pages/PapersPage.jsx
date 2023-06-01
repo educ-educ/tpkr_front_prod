@@ -1,6 +1,5 @@
 import { Container, Table } from "react-bootstrap"
-import { Link } from "react-router-dom"
-import "../pages.scss"
+import "./pages.scss"
 
 const papers = [
     {
@@ -31,11 +30,11 @@ const papers = [
 
 const PapersPage = () => {
     return (
-        <Container fluid className='person-decorator' style={{height: window.innerHeight - 60 + 'px'}}>
-            <div className='person-decorator__title'>
+        <Container fluid className='student-decorator' style={{height: window.innerHeight - 60 + 'px'}}>
+            <div className='student-decorator__title'>
                 Сертификаты
             </div>
-            <div className='person-decorator__mainpage'>
+            <div className='student-decorator__mainpage'>
                 <Table striped>
                     <thead>
                         <th>Курс</th>
