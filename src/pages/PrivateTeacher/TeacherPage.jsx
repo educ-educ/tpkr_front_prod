@@ -1,7 +1,7 @@
 import {Container} from 'react-bootstrap';
-import "./pages.scss"
+import "../pages.scss"
 
-const StudentPage = () => {
+const TeacherPage = () => {
         return (
             <Container fluid className='student-decorator' style={{height: window.innerHeight - 60 + 'px'}}>
                 <div className='student-decorator__title'>
@@ -23,4 +23,4 @@ const StudentPage = () => {
             </Container>
         )
     }
-export default StudentPage;
+export default TeacherPage;

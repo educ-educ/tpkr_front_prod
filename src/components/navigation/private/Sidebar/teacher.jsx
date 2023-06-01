@@ -6,13 +6,14 @@ import {BsBookmarkStarFill, BsBookHalf, BsBookmarksFill} from 'react-icons/bs';
 import {useSelector} from 'react-redux';
 import './UserSidebar.scss';
 
-const UserSidebar = () => {
+const TeacherSidebar = () => {
+
     const authUser = useSelector(x => x.auth.user);
     const [activeIndex, setActiveIndex] = useState(0);
     const sidebarRef = useRef();
     const location = useLocation();
     const currentPath = authUser.role
-    
+
     const sidebarNavItems = [
         {
             textContent: 'Главная',
@@ -21,28 +22,16 @@ const UserSidebar = () => {
             section: ''
         },
         {
-            textContent: 'Текущие курсы',
+            textContent: 'Актуальные курсы',
             icon: <BsBookHalf/>,
             to: `/${currentPath}/current_courses`,
             section: 'menu'
         },
         {
-            textContent: 'Законченные курсы',
+            textContent: 'Черновики',
             icon: <AiFillBook/>,
             to: `/${currentPath}/ended_courses`,
             section: 'mainpage'
-        },
-        {
-            textContent: 'Сертификаты',
-            icon: <BsBookmarksFill/>,
-            to: `/${currentPath}/papers`,
-            section: 'contact'
-        },
-        {
-            textContent: 'Оценки',
-            icon: <BsBookmarkStarFill/>,
-            to: `/${currentPath}/grades`,
-            section: 'users'
         },
         {
             textContent: 'Управление подпиской',
@@ -87,4 +76,4 @@ const UserSidebar = () => {
     </div>;
 };
 
-export default UserSidebar;
+export default TeacherSidebar;

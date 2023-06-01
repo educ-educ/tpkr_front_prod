@@ -52,6 +52,28 @@
     
 }
 
+.course {
+    &__container {
+        margin: 60px;
+        padding: 30px;
+        background-color: var(--color-background--light-green);
+       
+        &--title {
+            color: var(--color-red);
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        &--text {
+            color: var(--color-text--dark);
+            margin-top: 30px;
+            font-size: 20px;
+            text-align: justify;
+        }
+    }
+}
+
+
 .student {
     &-decorator {
         padding: 8vh 5vw !important;
@@ -89,25 +111,4 @@
         }
     }
 
-}
-
-.course {
-    &__container {
-        margin: 60px;
-        padding: 30px;
-        background-color: var(--color-background--light-green);
-       
-        &--title {
-            color: var(--color-red);
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-        }
-        &--text {
-            color: var(--color-text--dark);
-            margin-top: 30px;
-            font-size: 20px;
-            text-align: justify;
-        }
-    }
 }

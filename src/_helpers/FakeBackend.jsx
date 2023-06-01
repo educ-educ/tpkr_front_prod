@@ -8,9 +8,12 @@ import article7 from '../img/article7.jpg';
 import article8 from '../img/article8.jpg';
 
 export function fakeBackend() {
-    let users = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User', patronymicName: "users", role: "student"}];
+    let users = [{ id: 1, username: 'test', password: 'test', firstName: 'Алина', lastName: 'Кузнецова', patronymicName: "Дмитриевна", role: "teacher"},
+    { id: 2, username: 'ahrilis', password: 'ahrilis', firstName: 'Алина', lastName: 'Кузнецова', patronymicName: "Дмитриевна", role: "student"}];
+
     let courses = [
         {id: 0, src: article1, text: "Чайная церемония", data: '11/07/2022'},
+        {id: 1, src: article6, text: "Чайная церемония", data: '11/07/2022'},
         {id: 2, src: article3, text: "Все о чае", data: '11/03/2022'},
         {id: 3, src: article4, text: "Чай Древнего Китая у вас на даче", data: '03/05/2022'},
         {id: 4, src: article5, text: "Все о чае", data: '11/05/2022'},
@@ -52,6 +55,7 @@ export function fakeBackend() {
                     username: user.login,
                     firstName: user.firstName,
                     lastName: user.lastName,
+                    patronymicName: user.patronymicName,
                     role: user.role,
                     token: 'fake-jwt-token'
                 });

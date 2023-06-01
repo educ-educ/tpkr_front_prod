@@ -9,9 +9,20 @@ import './App.css';
 import MainLayout from './Layouts/MainLayout';
 import MainPage from './pages/MainPage';
 import PrivateLayout from './Layouts/PrivateLayout';
-import StudentPage from './pages/StudentPage';
+import StudentPage from './pages/PrivateStudent/StudentPage';
 import CourseLayout from "../src/Layouts/CourseLayout"
 import CoursePage from "../src/pages/CoursePage"
+import PrivateTeacherLayout from "../src/Layouts/PrivateTeacherLayout"
+import TeacherPage from "./pages/PrivateTeacher/TeacherPage"
+import TeacherCourses from "./pages/PrivateTeacher/TeacherCourses"
+import TeacherRawCourses from "./pages/PrivateTeacher/TeacherRawCourses"
+import TeacherSubscription from "./pages/PrivateTeacher/TeacherSubscription"
+import StudentCurrentCourses from './pages/PrivateStudent/StudentCurrentCourses';
+import StudentGraduatedCourses from './pages/PrivateStudent/StudentGraduatedCourses';
+import StudentGrades from './pages/PrivateStudent/StudentGrades';
+import StudentPapers from './pages/PrivateStudent/StudentPapers';
+import StudentSubscription from "./pages/PrivateStudent/StudentSubscription"
+
 
 function App() {
   history.navigate = useNavigate();
@@ -20,11 +31,6 @@ function App() {
        loading: false,
        repos: null,
   });
-
-  function PrivateOutlet() {
-    const authUser = useSelector(x => x.auth.user);
-    return authUser ? <Navigate to={`/admin/${authUser.role}`}/> : <Navigate to="/"/>;
-  }
 
   function useCheckLogin() {
     const authUser = useSelector(x => x.auth.user);
@@ -42,14 +48,21 @@ function App() {
         <Route exact path="/auth" element={<Login/>} onEnter={useCheckLogin}/>
         <Route exact path="/student" element={<PrivateLayout/>}>
           <Route index element={<StudentPage/>}/>
+          <Route exact path="current_courses" element={<StudentCurrentCourses/>}/>
+          <Route exact path="ended_courses" element={<StudentGraduatedCourses/>}/>
+          <Route exact path="papers" element={<StudentPapers/>}/>
+          <Route exact path="grades" element={<StudentGrades/>}/>
+          <Route exact path="subscription" element={<StudentSubscription/>}/>
         </Route>
-        <Route exact path="/teacher" element={<PrivateLayout/>}>
-          <Route index element={<StudentPage/>}/>
+        <Route exact path="/teacher" element={<PrivateTeacherLayout/>}>
+          <Route index element={<TeacherPage/>}/>
+          <Route exact path="current_courses" element={<TeacherCourses/>}/>
+          <Route exact path="ended_courses" element={<TeacherRawCourses/>}/>
+          <Route exact path="subscription" element={<TeacherSubscription/>}/>
         </Route>
         <Route path="*" element={<Navigate to="/"/>}/>
     </Routes>
   );
-
 }
 
 export default App;
