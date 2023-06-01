@@ -43,7 +43,7 @@ const PapersPage = () => {
                         <th>Дата окончания</th>
                         <th>Ссылка на документ</th>
                     </thead>
-                    <tbody>
+                    <tbody className="person-table">
                         {
                             papers.map((paper)=>
                                 <>

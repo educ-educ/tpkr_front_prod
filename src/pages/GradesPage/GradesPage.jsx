@@ -1,7 +1,7 @@
 import "../pages.scss"
 import Table from "react-bootstrap/Table"
 import { Container } from "react-bootstrap"
-import { useState } from "react"
+import {AiFillFolderOpen} from 'react-icons/ai'
 
 const grades = [
     {
@@ -55,6 +55,29 @@ const grades = [
                 ]
             }
         ]
+    },
+    {
+        course_name: "Курс по JS",
+        status: "В процессе",
+        sections: [
+            {
+                name: "Методы массивов",
+                items: [
+                    {
+                        task: 'Тест по map',
+                        grade: 0,
+                        max_grade: 5.0,
+                        datetime: "14.05.2023 15:43" 
+                    },
+                    {
+                        task: 'Тест по reduce',
+                        grade: 5.0,
+                        max_grade: 15.0,
+                        datetime: "14.05.2023 15:43" 
+                    }
+                ]
+            }
+        ]
     }
 ]
 
@@ -71,7 +94,7 @@ const GradesPage = () => {
                 Оценки
             </div>
             <div className='person-decorator__mainpage'>
-                <Table striped className="person-decorator__mainpage__table">
+                <Table>
                     <thead>
                         <th colSpan="3" id="itemname">Название</th>
                         <th id='status'>Статус</th>
@@ -79,12 +102,12 @@ const GradesPage = () => {
                         <th id="grade_diap">Диапазон</th>
                         <th id="grade_percents">Процент</th>
                     </thead>
-                    <tbody className="person-table-body">
+                    <tbody className="person-table">
                         {
                             grades.map((cource) => 
                                 <>
-                                    <tr>
-                                        <td colSpan="3">{cource.course_name}</td>
+                                    <tr className="person-table__layer1">
+                                        <td className="person-table__name" colSpan="3"><AiFillFolderOpen/> {cource.course_name}</td>
                                         <td>{cource.status}</td>
                                         <td>{getCourceGrade(cource)}</td>
                                         <td>{getCourceMaxGrade(cource)}</td>
@@ -95,21 +118,21 @@ const GradesPage = () => {
                                         <>
                                             <tr>
                                                 {(sectionIndex===0) &&
-                                                     <td className="layer-1" rowSpan={getCourceRowCount(cource)}></td>
+                                                     <td className="person-table__layer1 person-table__offset" rowSpan={getCourceRowCount(cource)}></td>
                                                 }
-                                                <td colSpan="2">{section.name}</td>
+                                                <td className="person-table__layer2 person-table__name" colSpan="100"><AiFillFolderOpen/> {section.name}</td>
                                             </tr>
                                             {
                                             section.items.map((item, itemIndex)=> 
                                                 <>
-                                                    <tr>
+                                                    <tr className="person-table__layer3">
                                                         {(itemIndex===0) &&
-                                                            <td className="layer-2" rowSpan={section.items.length}></td>
+                                                            <td className="person-table__layer2 person-table__offset" rowSpan={section.items.length}></td>
                                                         }
-                                                        <td colSpan="2">{item.task}</td>
-                                                        <td>{item.grade}</td>
-                                                        <td>0-{item.max_grade}</td>
-                                                        <td>{((item.grade / item.max_grade)*100).toFixed(0)}%</td>
+                                                        <td className="person-table__line" colSpan="2">{item.task}</td>
+                                                        <td className="person-table__line">{item.grade}</td>
+                                                        <td className="person-table__line">0-{item.max_grade}</td>
+                                                        <td className="person-table__line">{((item.grade / item.max_grade)*100).toFixed(0)}%</td>
                                                     </tr>
                                                 </>
                                             )}
