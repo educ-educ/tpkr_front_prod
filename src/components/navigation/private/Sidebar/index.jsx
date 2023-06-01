@@ -6,42 +6,42 @@ import {BsBookmarkStarFill, BsBookHalf, BsBookmarksFill} from 'react-icons/bs';
 import {useSelector} from 'react-redux';
 import './UserSidebar.scss';
 
-
+const basePath = '/student'
 const sidebarNavItems = [
     {
         textContent: 'Главная',
         icon: <AiFillHome/>,
-        to: '/admin/home',
+        to: '/home',
         section: ''
     },
     {
         textContent: 'Текущие курсы',
         icon: <BsBookHalf/>,
-        to: '/admin/home/current_courses',
+        to: '/current_courses',
         section: 'menu'
     },
     {
         textContent: 'Законченные курсы',
         icon: <AiFillBook/>,
-        to: '/admin/home/ended_courses',
+        to: '/ended_courses',
         section: 'mainpage'
     },
     {
         textContent: 'Сертификаты',
         icon: <BsBookmarksFill/>,
-        to: '/admin/home/papers',
+        to: '/papers',
         section: 'contact'
     },
     {
         textContent: 'Оценки',
         icon: <BsBookmarkStarFill/>,
-        to: '/admin/home/grades',
+        to: '/grades',
         section: 'users'
     },
     {
         textContent: 'Управление подпиской',
         icon: <AiFillSetting/>,
-        to: '/admin/home/subscribtion',
+        to: '/subscribtion',
         section: 'form'
     },
 ]
@@ -75,7 +75,7 @@ const UserSidebar = () => {
         <div ref={sidebarRef} className="sidebar__menu">
             {
                 sidebarNavItems.map((item, index) => (
-                    <Link to={item.to} key={index} className='sidebar__menu__link'>
+                    <Link to={basePath+item.to} key={index} className='sidebar__menu__link'>
                         <div className={`sidebar__menu__item ${activeIndex === index ? 'active' : ''}`}>
                                 <div className='sidebar__menu__item__icon'>{item.icon}</div>
                                 {item.textContent}

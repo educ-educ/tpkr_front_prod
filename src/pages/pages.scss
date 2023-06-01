@@ -91,6 +91,38 @@
 
 }
 
+.person-table {
+    border: 1px solid;
+
+    &__name {
+        border-top: 1px solid;
+        border-bottom: 0;
+    }
+    &__line {
+        border-top: 1px solid;
+    }
+
+    &__offset {
+        width: 20px;
+        border: 1px solid;
+        border-top: 0;
+    }
+    
+    
+    &__layer1 {
+        background-color: var(--color-green-1) !important;
+    }
+
+    &__layer2 {
+        background-color: var(--color-green-2) !important;
+    }
+
+    &__layer3 {
+        background-color: var(--color-green-3) !important;
+    }
+}
+
+
 .course {
     &__container {
         margin: 60px;

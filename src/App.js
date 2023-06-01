@@ -9,6 +9,9 @@ import './App.css';
 import MainLayout from './Layouts/MainLayout';
 import MainPage from './pages/MainPage';
 import PrivateLayout from './Layouts/PrivateLayout';
+// import PersonPage from './pages/PersonPage';
+import GradesPage from './pages/GradesPage';
+import PapersPage from './pages/PapersPage';
 import StudentPage from './pages/StudentPage';
 import CourseLayout from "../src/Layouts/CourseLayout"
 import CoursePage from "../src/pages/CoursePage"
@@ -42,6 +45,8 @@ function App() {
         <Route exact path="/auth" element={<Login/>} onEnter={useCheckLogin}/>
         <Route exact path="/student" element={<PrivateLayout/>}>
           <Route index element={<StudentPage/>}/>
+          <Route path='papers' element={<PapersPage/>}/>
+          <Route path='grades' element={<GradesPage/>}/>
         </Route>
         <Route exact path="/teacher" element={<PrivateLayout/>}>
           <Route index element={<StudentPage/>}/>
