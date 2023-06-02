@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
 import { history } from '../_helpers';
 import { authActions } from '../_store';
+import { Table } from 'react-bootstrap';
 import "./Login.scss"
 export { Login };
 
@@ -35,8 +36,25 @@ function Login() {
         <div className="admin-access">
             <div className="admin-access__main">
                 <div className="admin-access--info">
-                    Имя пользователя: test<br />
-                    Пароль: test
+                    <Table>
+                        <thead>
+                            <th>Тип учетной записи</th>
+                            <th>Имя пользователя</th>
+                            <th>Пароль</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Преподаватель</td>
+                                <td>test</td>
+                                <td>test</td>
+                            </tr>
+                            <tr>
+                                <td>Студент</td>
+                                <td>ahrilis</td>
+                                <td>ahrilis</td>
+                            </tr>
+                        </tbody>
+                    </Table>
                 </div>
                 <h4 className="admin-access__title">Вход</h4>
                 <div className="admin-access__form">
